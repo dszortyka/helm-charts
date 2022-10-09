@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  jupyter:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-09T18:41:08.565412-03:00"
+    description: A Helm chart for jupyter notebook
+    digest: 45bd3564963996ff734499d92a791763934e046b1600f0344aff97786b9ae0bf
+    name: jupyter
+    type: application
+    urls:
+    - jupyter-0.0.1.tgz
+    version: 0.0.1
+  mysql:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-10-09T18:41:08.566068-03:00"
+    description: A Helm chart for Kubernetes
+    digest: c7a433c5e4ee601c1747d63cac5f25a205bb2e91362f33618885869132a134a4
+    name: mysql
+    type: application
+    urls:
+    - mysql-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-10-09T18:41:08.563166-03:00"

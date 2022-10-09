@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jupyter
+spec:
+  selector:
+    matchLabels:
+      app: jupyter
+  serviceName: jupyter
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jupyter
+    spec:
+      containers:
+      - name: jupyter
+        image: ghcr.io/dszortyka/poc-jupyter:latest
+        # env:
+        # - name: "DOCKER_WAIT_HOST"
+        #   value: "postgresql"
+        # - name: "DOCKER_WAIT_PORT"
+        #   value: "5432"
+        ports:
+        - containerPort: 8888
+          name: jupyter
+        # resources:
+        #   requests:
+        #     memory: "3G"
+        #   limits:
+        #     memory: "4G"
+        volumeMounts:
+        - name: jupyter-volume
+          mountPath: /shared_data
+      volumes:
+        - name: jupyter-volume
+          persistentVolumeClaim:
+            claimName: jupyter-claim
